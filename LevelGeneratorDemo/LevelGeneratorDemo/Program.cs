@@ -14,6 +14,12 @@ namespace LevelGeneratorDemo
             LevelManager levelManager = new LevelManager();
             Random r = new Random();
             levelManager.Seed = 0;
+
+            char[,] level = levelManager.GenerateLevel(3);
+            levelManager.SaveCharMatrixToTextFile(level, "FuckThisShit.txt");
+
+            /**
+            levelManager.Seed = 0;
             do
             {
                 Console.Clear();
@@ -24,7 +30,11 @@ namespace LevelGeneratorDemo
                 WriteLevel(chunkLayer2, PrintType.Char);
                 WriteLevel(chunkLayer3, PrintType.Char);
             } while (Console.ReadKey(true).Key == ConsoleKey.R);
+            /**/
             Console.ReadLine();
+            
+
+            
         }
         private static void WriteLevel(int[,] layerLevel, PrintType type)
         {
